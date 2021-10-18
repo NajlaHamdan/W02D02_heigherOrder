@@ -117,6 +117,10 @@ function houseSize(array){
   return obj;
 }
 
-function uniqueDog(){
-  
+function createDog(name,dogBreed,furColor){
+  let uniqueDogs=new set(); 
+  uniqueDogs.name=name;
+  uniqueDogs.breed=dogBreed;
+  uniqueDogs.color=furColor;
+  return uniqueDogs;
 }

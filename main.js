@@ -104,5 +104,19 @@ function PassedOrFailed(grades){
 }
 
 function totalCharacters(array){
-    
+    return array.reduce(function (previousValue,currValue){
+      return previousValue+=currValue.length;
+    } , 0)
+}
+
+function houseSize(array){
+  let obj={house};
+  array.forEach(function(item){
+    obj.house=item;
+  })
+  return obj;
+}
+
+function uniqueDog(){
+  
 }

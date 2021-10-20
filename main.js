@@ -77,50 +77,67 @@ function countNumberOfElements(array) {
 //---------------object---------------
 
 function checkValues(obj, value) {
-  let result= Object.keys(obj).find(item=>obj[item]===value);
-  return result==null ? false:true;
+  let result = Object.keys(obj).find((item) => obj[item] === value);
+  return result == null ? false : true;
 }
- function getCourseKeys(courseInfo){
-    let result= Object.keys(courseInfo);
-    return result;
- }
- function updateNumbers(object){
-    let res = []
-    for (const key in object) {
-       res.push(key);
-       res.push(+object[key])
+function getCourseKeys(courseInfo) {
+  let result = Object.keys(courseInfo);
+  return result;
+}
+function updateNumbers(object) {
+  let res = [];
+  for (const key in object) {
+    res.push(key);
+    res.push(+object[key]);
+  }
+  return res;
+}
+
+function PassedOrFailed(grades) {
+  for (const key in grades) {
+    if (grades.grade >= 50) {
+      return "The student have passed";
+    } else {
+      return "The student have failed";
     }
-    return res;
- }
-
-function PassedOrFailed(grades){
-    for (const key in grades) {
-        if(grades.grade>=50) {
-            return "The student have passed";
-        }else {
-            return "The student have failed"
-        }
-    }
+  }
 }
 
-function totalCharacters(array){
-    return array.reduce(function (previousValue,currValue){
-      return previousValue+=currValue.length;
-    } , 0)
+function totalCharacters(array) {
+  return array.reduce(function (previousValue, currValue) {
+    return (previousValue += currValue.length);
+  }, 0);
 }
 
-function houseSize(array){
-  let obj={house};
-  array.forEach(function(item){
-    obj.house=item;
-  })
-  return obj;
+function houseSize(array) {
+  const newArray = [];
+  for (i = 0; i < array.length; i += 2) {
+    const obj = {};
+    obj.house = array[i];
+    obj.size = array[i + 1];
+    newArray.push(obj);
+  }
+  return newArray;
 }
 
-function createDog(name,dogBreed,furColor){
-  let uniqueDogs=new set(); 
-  uniqueDogs.name=name;
-  uniqueDogs.breed=dogBreed;
-  uniqueDogs.color=furColor;
-  return uniqueDogs;
+function createDog(name, dogBreed, furColor) {
+  const uniqueDogs = {
+    max: { breed: "Labrador Retriever", color: "blond" },
+    rex: { breed: "German Shepherd", color: "black and brown" },
+    lucy: { breed: "Bulldog", color: "white" },
+    lucifer: { breed: "Chihuahua", color: "brown" },
+  };
+  
+  // for (const key in uniqueDogs) {
+  // console.log(Object.keys(uniqueDogs)[i++]);}
+  // for (const key in uniqueDogs) {
+  //   if (Object.keys(uniqueDogs)[0] != name) {
+  //     uniqueDogs.name = name;
+  //     uniqueDogs.breed = dogBreed;
+  //     uniqueDogs.color = furColor;
+  //     return "Added the dog successfully";
+  //   } else {
+  //     return"The dog isn't unique enough ";
+  //   }
+  // }
 }

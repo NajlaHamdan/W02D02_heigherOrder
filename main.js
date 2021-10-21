@@ -127,17 +127,14 @@ function createDog(name, dogBreed, furColor) {
     lucy: { breed: "Bulldog", color: "white" },
     lucifer: { breed: "Chihuahua", color: "brown" },
   };
-  
-  // for (const key in uniqueDogs) {
-  // console.log(Object.keys(uniqueDogs)[i++]);}
-  // for (const key in uniqueDogs) {
-  //   if (Object.keys(uniqueDogs)[0] != name) {
-  //     uniqueDogs.name = name;
-  //     uniqueDogs.breed = dogBreed;
-  //     uniqueDogs.color = furColor;
-  //     return "Added the dog successfully";
-  //   } else {
-  //     return"The dog isn't unique enough ";
-  //   }
-  // }
+  for (let dogName in uniqueDogs) {
+    if (dogName == name) {
+      return "the dog is not unique";
+    }
+    name: {
+      breed: dogBreed;
+      color: furColor;
+    }
+  }
+  return "Added the dog successfully";
 }
